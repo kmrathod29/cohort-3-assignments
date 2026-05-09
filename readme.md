@@ -6,7 +6,7 @@ This repository contains all assignments, UI clones, frontend and backend practi
 
 | Assignment | Project | Live Demo |
 |------------|----------|------------|
-| A-1 | Loomé Fashion UI | https://kmrathod29.github.io/cohort-3-assignments/a-1-loom%C3%A9/ |
+| A-1 | Loomé Fashion UI | https://kmrathod29.github.io/cohort-3-assignments/a-1-loome/ |
 | A-2 | Reload Agency UI | Coming Soon |
 <!-- | A-3 |  | Coming Soon | -->
 
