@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: sans-serif;
+    /* background-color: #f0f0f0; */
+}
+
+.main {
+    padding: 10px;
+}
+
+.top-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5em;
+}
+
+.left-star img {
+    height: 4em;
+    width: 4em;
+}
+
+.big-heading-group {
+    padding-top: 2em;
+}
+
+.lines {
+    text-transform: uppercase;
+    color: #5a0205;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: -4px;
+}
+
+.line-1,
+.line-2 {
+    line-height: 30px;
+}
+
+.line-3,
+.line-4 {
+    line-height: 60px;
+    margin-left: 3em;
+}
+
+.line-3 {
+    color: #b09797;
+}
+
+.line-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.middle-icon {
+    height: 1.5em;
+    width: 1.7em;
+}
+
+.big-heading-group p {
+    margin-top: 2em;
+    width: 30em;
+    margin-left: 13em;
+    color: #83252b;
+}
+
+.right-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.right-text h4 {
+    text-transform: uppercase;
+    color: #a98b8b;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+
+.middle-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0 15px;
+}
+
+.left-side-text {
+    width: 10px;
+    color: #5a0205;
+    text-decoration: underline;
+}
+
+.left-side-text h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.right-side-cards {
+    display: flex;
+    gap: 2em;
+}
+
+.cards {
+    height: 19em;
+    width: 18em;
+    background-color: #9c6c6f;
+    border-radius: 20px;
+    background-size: cover;
+    /* background-position: center; */
+}
+
+.card-1 {
+    background-image: url(./card-1-img.jpg);
+}
+
+.card-2 {
+    background-image: url(./card-2-img.jpg);
+}
+
+.card-3 {
+    background-image: url(./card-3-img.jpg);
+}
+
+.bottom-area {
+    /* position: absolute; */
+    /* left: 50%; */
+    /* bottom: -50%; */
+    /* transform: translate(-50%, -50%); */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.bottom-area h2 {
+    text-transform: uppercase;
+    color: #5a0205;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: -4px;
+    justify-content: center;
+}
+
+.bottom-area span {
+    color: #9c6c6f;
+}
+
+.bottom-area p {
+    width: 31em;
+    font-size: 14px;
+    color: #83252b;
+    text-align: center;
+    margin-top: 2em;
+}
