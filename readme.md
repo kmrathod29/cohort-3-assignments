@@ -8,7 +8,8 @@ This repository contains all assignments, UI clones, frontend and backend practi
 |------------|----------|------------|
 | A-1 | Loomé Fashion UI | https://kmrathod29.github.io/cohort-3-assignments/a-1-loome/ |
 | A-2 | Reload Agency UI | https://kmrathod29.github.io/cohort-3-assignments/a-2-reload-design/ |
-<!-- | A-3 |  | Coming Soon | -->
+| A-3 | Reload Agency UI | https://kmrathod29.github.io/cohort-3-assignments/a-3-squid-game-ui/ |
+
 
 <!-- ---
 
