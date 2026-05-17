@@ -350,13 +350,44 @@ main {
 }
 
 .center-bottom-right {
-    /* background-image: url(./ChatGPT\ Image\ May\ 12\,\ 2026\,\ 09_55_11\ AM.png);
-    background-size: cover;
-    background-position: center; */
     background-color: #fdf2f3;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
 }
 
+.center-bottom-right .content h2 {
+    font-size: 22px;
+}
+
+.center-bottom-right p {
+    font-size: 13px;
+    margin-top: 13px;
+}
+
+.center-bottom-right .btn {
+    background-color: #000;
+    color: #fff;
+    height: 2.7em;
+    width: 11em;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.center-bottom-right .btn i {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.center-bottom-right .img-part img {
+    height: 8em;
+}
 
 .right-section {
     display: grid;
@@ -424,12 +455,11 @@ main {
     margin-top: 3em;
 }
 
-.right-section  .part2 {
+.right-section .part2 {
     background-color: #fbf7f8;
     border-radius: 10px;
     /* padding: 30px; */
 }
-
 
 .right-section .part2 .first {
     display: flex;
@@ -441,25 +471,25 @@ main {
     font-size: 1.2rem;
 }
 
-.right-section  .part2 .first h2 {
+.right-section .part2 .first h2 {
     font-size: 5rem;
 }
 
-.right-section  .part2 .second {
+.right-section .part2 .second {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 5px;
 }
 
-.right-section  .part2 .second p {
+.right-section .part2 .second p {
     color: #fb496a;
     font-weight: 700;
     line-height: 1.8em;
     font-size: 20px;
 }
 
-.right-section  .part2 .second p span {
+.right-section .part2 .second p span {
     color: #000;
     font-weight: 500;
     font-size: 16px;
@@ -469,7 +499,7 @@ main {
     font-size: 20px;
 }
 
-.right-section  .part2 .second .ri-user-add-line {
+.right-section .part2 .second .ri-user-add-line {
     font-size: 2.5em;
     background-color: #f9cfd7;
     padding: 7px 20px;
@@ -477,12 +507,45 @@ main {
     font-weight: 400;
 }
 
-
-
-
-
-
 .right-bottom {
     background-color: #fbf7f7;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.right-bottom img {
+    height: 4em;
+    width: 4em;
+    margin-top: 10px;
+}
+
+.right-bottom h2 {
+    font-size: 2.5rem;
+}
+
+.right-bottom h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.right-bottom p {
+    background-color: #f9cfd7;
+    height: 2.7em;
+    width: 11em;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    justify-content: center;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.right-bottom i {
+    font-size: 2em;
+    font-weight: 300;
 }
