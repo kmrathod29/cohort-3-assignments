@@ -11,3 +11,13 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
+.main {
+     padding: 15px;
+}
+
+.hero {
+    background-image: url(./bg-img.avif);
+    background-size: cover;
+    background-position: center;
+    min-height: 96vh;
+}
