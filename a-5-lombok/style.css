@@ -8,11 +8,12 @@ html,
 body {
     height: 100%;
     width: 100%;
-    font-family: Helvetica, sans-serif;
+    /* font-family: Helvetica, sans-serif; */
+    font-family: system-ui;
 }
 
-.main {
-     padding: 15px;
+.hero-wrapper {
+    padding: 15px;
 }
 
 .hero {
@@ -20,4 +21,190 @@ body {
     background-size: cover;
     background-position: center;
     min-height: 96vh;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.subscribe-btn {
+    border: 1px solid white;
+    padding: 8px 20px;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 8rem;
+    letter-spacing: 5px;
+}
+
+.hero-content p {
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+    background: white;
+}
+
+.latest-articles {
+    padding: 100px 80px;
+    background-color: #F5F7F6;
+    /* background-color: #18ec82; */
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading h2 {
+    font-size: 3rem;
+}
+
+.heading .line {
+    width: 80px;
+    height: 2px;
+    background: black;
+}
+
+.article-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 40px;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.404);
+}
+
+.card-img {
+    height: 220px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-1 .card-img img {
+    object-position: top;
+}
+
+.card-2 .card-img img {
+    object-position: center;
+}
+
+.card-3 .card-img img {
+    object-position: center;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 220px;
+}
+
+.card-content p {
+    max-width: 220px;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.small-line {
+    width: 60px;
+    height: 2px;
+    background: black;
+}
+
+.about{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:80px;
+    padding:40px 20px;
+    align-items:center;
+}
+
+.about-img{
+    height:700px;
+    width:700px;
+    overflow:hidden;
+}
+
+.about-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    object-position: top;
+}
+
+.about-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+}
+
+.about-content h2{
+    font-size:3rem;
+    line-height: 1;
+}
+
+.about-content .line{
+    width:80px;
+    height:4px;
+    background:black;
+}
+
+.about-content p{
+    max-width:620px;
+    text-align:center;
+    line-height:1.5;
+    font-size:1.25rem;
+    font-weight: 600;
 }
