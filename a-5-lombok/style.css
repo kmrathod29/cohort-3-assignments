@@ -161,50 +161,114 @@ body {
     background: black;
 }
 
-.about{
-    display:grid;
+.about {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap:80px;
-    padding:40px 20px;
-    align-items:center;
+    gap: 80px;
+    padding: 30px 20px;
+    align-items: center;
 }
 
-.about-img{
-    height:700px;
-    width:700px;
-    overflow:hidden;
+.about-img {
+    height: 700px;
+    width: 700px;
+    overflow: hidden;
 }
 
-.about-img img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     object-position: top;
 }
 
-.about-content{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:30px;
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
-.about-content h2{
-    font-size:3rem;
+.about-content h2 {
+    font-size: 3rem;
     line-height: 1;
 }
 
-.about-content .line{
-    width:80px;
-    height:4px;
-    background:black;
+.about-content .line {
+    width: 80px;
+    height: 4px;
+    background: black;
 }
 
-.about-content p{
-    max-width:620px;
-    text-align:center;
-    line-height:1.5;
-    font-size:1.25rem;
+.about-content p {
+    max-width: 620px;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1.25rem;
     font-weight: 600;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 70px 0px;
+    min-height: 60vh;
+    background: #f5f5f5;
+}
+
+.subscribe h2 {
+    font-size: 3rem;
+}
+
+.subscribe p {
+    font-size: 20px;
+}
+
+.subscribe input {
+    width: 250px;
+    height: 40px;
+    padding: 18px;
+    border: none;
+    background: #fff;
+    text-align: center;
+    outline: none;
+}
+
+.subscribe button {
+    padding: 8px 35px;
+    background: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px 80px;
+}
+
+.social-icons{
+    display:flex;
+    gap:20px;
+}
+
+.social-icons i{
+    font-size:22px;
+    cursor:pointer;
+}
+
+.footer-links{
+    display:flex;
+    gap:35px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:black;
+    font-weight:600;
 }
