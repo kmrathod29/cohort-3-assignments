@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@font-face {
+    font-family: Reckless;
+    src: url(./fonts//RecklessCondensedS-TRIAL-Book.woff);
+}
+
+@font-face {
+    font-family: Figtree;
+    src: url(./fonts/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2);
+}
+
+@font-face {
+    font-family: Midnight;
+    src: url(./fonts//midnight-sans-rd-12-medium-trial.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+}
+
+.top-banner {
+    background: #2a2857;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.top-banner p {
+    font-family: "Roboto Mono";
+    font-size: 13px;
+}
+
+.hero-wrapper {
+    min-height: 92vh;
+    background-image: url(./AlpineBerry_mobile.webp);
+    background-size: 220%;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* ----- media query ------ */
+
+@media (min-width:1024px) {
+    .hero-wrapper {
+        min-height: 90vh;
+        background-image: url(./AlpineBerry.webp);
+        background-size: 135%;
+    }
+}
+
+.navbar {
+    width: calc(100% - 3rem);
+    /* margin-inline: auto; */
+    margin: 1rem;
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1.5px solid black;
+}
+
+nav i {
+    font-size: 2.2rem;
+    font-weight: 100;
+}
+
+.nav-part-1 {
+    display: flex;
+    /* flex: 1; */
+    gap: 1rem;
+    display: none;
+}
+
+.nav-part-2 {
+    /* flex: 1; */
+    height: auto;
+}
+
+.nav-part-2 img {
+    height: 35px;
+    width: auto;
+    transform: scale(1.2);
+}
+
+.nav-part-3 {
+    display: flex;
+    /* flex: 1; */
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-part-3 h3 {
+    font-weight: 300;
+    display: none;
+}
+
+.nav-part-3 svg {
+    width: 30px;
+    height: 30px;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon .count {
+    font-family: "Roboto Mono";
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: -10px;
+    background-color: #ffb500;
+    padding: 5px;
+    height: 18px;
+    width: 20px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width:1024px) {
+
+    nav i {
+        display: none;
+    }
+
+    nav .nav-part-1 {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+        font-family: Reckless;
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-link-icon {
+        background-color: #c0dbff;
+        padding: 0px;
+        border-radius: 50%;
+        border: 1px solid black;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .nav-part-1 .nav-link:not(.review-nav-link) svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .nav-part-1 h3 {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    nav .nav-part-2 {
+        margin-left: 3rem;
+    }
+
+    .nav-part-3 {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .nav-part-3 h3 {
+        font-weight: 500;
+        display: block;
+        font-size: 0.8rem;
+        font-family: 'Roboto Mono';
+        text-transform: uppercase;
+    }
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.hero h1 {
+    font-family: Reckless;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.hero p {
+    font-family: Figtree;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.hero button {
+    font-family: Figtree;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 999px;
+    background-color: #2A2857;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero button:hover {
+    transform: translateY(-2px);
+    background-color: #1d1b44;
+}
+
+@media (min-width:1024px) {
+
+    .hero {
+        align-items: flex-start;
+        text-align: left;
+        padding: 4rem;
+    }
+
+    .hero h1 {
+        font-size: 5.8rem;
+        line-height: 1.1;
+    }
+
+    .hero p {
+        width: 30rem;
+    }
+
+}
