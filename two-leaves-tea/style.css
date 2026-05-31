@@ -443,8 +443,22 @@ nav i {
     border-radius: 15px;
     border: 1px solid #201C1A;
     background-color: white;
-    font-size: 1.5rem;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: figtree;
+}
+
+.add-btn i {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.add-btn span {
+    font-size: .8rem;
+    font-weight: 400;
 }
 
 .card-content {
@@ -452,7 +466,7 @@ nav i {
 }
 
 .card-content h3 {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     line-height: 1.2;
     font-family: reckless;
     font-weight: 100;
@@ -467,14 +481,16 @@ nav i {
     line-height: 1.5;
 }
 
-.card-content span,
-.card-content p {
-    font-family: Figtree;
-}
-
 .card-content span {
     font-weight: 500;
 }
+
+.card-content span,
+.card-content p {
+    font-family: Figtree;
+    font-size: .8rem;
+}
+
 
 .scroll-btn {
     position: absolute;
