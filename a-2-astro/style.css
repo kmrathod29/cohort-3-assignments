@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: roboto;
+    background-color: #FAEBDF;
+}
+
+header {
+    /* background-color: aqua; */
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.062);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    gap: 4rem;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav .logo span {
+    color: red;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 4rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+nav .right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 1rem;
+}
+
+nav .right a {
+    text-decoration: none;
+}
+
+nav .right a i {
+    font-size: 1.2rem;
+    color: black;
+}
+
