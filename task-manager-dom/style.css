@@ -1,8 +1,3 @@
-/* =========================================================
-   DOM Explorer — Interactive Task Manager
-   Dark navy dashboard theme — CSS only, no JavaScript
-   ========================================================= */
-
 :root {
   /* Surfaces */
   --bg: #0a0e1a;
@@ -376,17 +371,9 @@ select.input {
 .stats-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
+  /* border-left: 3px solid var(--accent); */
   border-radius: var(--radius-md);
   padding: 20px;
-}
-
-.stats-card-success {
-  border-left-color: var(--success);
-}
-
-.stats-card-warning {
-  border-left-color: var(--warning);
 }
 
 .stats-icon {
