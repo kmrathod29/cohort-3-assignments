@@ -447,6 +447,8 @@ select.input {
   margin-bottom: 10px;
 }
 
+/* edit delete complete button */
+
 .task-actions {
   display: flex;
   gap: 10px;
@@ -456,19 +458,14 @@ select.input {
 .task-btn {
   width: 40px;
   height: 40px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 10px;
   border: 1px solid var(--border);
-
   background: var(--surface-2);
   color: var(--text-secondary);
-
   cursor: pointer;
-
   transition: all 0.2s ease;
 }
 
@@ -496,6 +493,15 @@ select.input {
   background: rgba(248, 113, 113, 0.15);
   border-color: var(--danger);
   color: var(--danger);
+}
+
+.task-card.completed {
+  opacity: 0.75;
+}
+
+.task-card.completed .task-title-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
 }
 
 /* Event propagation demo */
