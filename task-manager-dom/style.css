@@ -1,4 +1,6 @@
 :root {
+  --navbar-bg: rgba(10, 14, 26, 0.85);
+
   /* Surfaces */
   --bg: #0a0e1a;
   --surface: #111a2e;
@@ -37,6 +39,26 @@
   --font-body: "Inter", sans-serif;
 }
 
+html[data-theme="light"] {
+  --navbar-bg: rgba(255, 255, 255, 0.9);
+
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --surface-3: #e2e8f0;
+
+  --border: #dbe3f0;
+  --border-soft: #e5e7eb;
+
+  --text: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+
+  --accent: #0ea5e9;
+  --accent-strong: #0284c7;
+  --accent-soft: rgba(14, 165, 233, 0.12);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -54,7 +76,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+h1,h2,h3 {
   font-family: var(--font-display);
   margin: 0;
   color: var(--text);
@@ -119,7 +141,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 14, 26, 0.85);
+  background: var(--navbar-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-soft);
 }
@@ -425,51 +447,55 @@ select.input {
   margin-bottom: 10px;
 }
 
-/* Attributes vs Properties */
-
-.compare-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
 }
 
-.compare-card h3 {
-  font-size: 1.05rem;
-  margin: 12px 0 10px;
-}
+.task-btn {
+  width: 40px;
+  height: 40px;
 
-.compare-card code {
-  background: var(--surface-3);
-  color: var(--accent);
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-size: 0.95rem;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.compare-card p code {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+
   background: var(--surface-2);
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
 }
 
-.badge {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 999px;
+.task-btn i {
+  font-size: 1rem;
 }
 
-.badge-accent {
-  background: var(--accent-soft);
+.task-btn:hover {
+  transform: translateY(-2px);
+}
+
+.complete-btn:hover {
+  background: rgba(52, 211, 153, 0.15);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.edit-btn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent);
   color: var(--accent);
 }
 
-.badge-muted {
-  background: var(--surface-3);
-  color: var(--text-secondary);
+.delete-btn:hover {
+  background: rgba(248, 113, 113, 0.15);
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 /* Event propagation demo */
