@@ -1,13 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Task Manager</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Explorer · Interactive Task Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    <script src="script.js"></script>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="logo">
+        <i class="ri-terminal-box-line"></i>
+        <span>DOM Explorer</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#task-manager"><i class="ri-task-line"></i><span>Tasks</span></a>
+        <a href="#pipeline"><i class="ri-flow-chart"></i><span>Pipeline</span></a>
+        <a href="#events"><i class="ri-cursor-line"></i><span>Events</span></a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <i class="ri-moon-line"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Interactive Task Manager</h1>
+        <p class="hero-subtitle">DOM Manipulation, Event Delegation, Event Propagation and the Browser Rendering
+          Pipeline</p>
+      </div>
+    </section>
+
+    <section class="container section" id="task-manager">
+      <h2 class="section-title"><i class="ri-list-check-3"></i> Task Manager</h2>
+
+      <article class="card">
+        <form class="task-form">
+          <div class="field field-grow">
+            <label for="task-title">Task Title</label>
+            <input class="input" type="text" id="task-title" placeholder="e.g. Refactor event listeners">
+          </div>
+
+          <div class="field">
+            <label for="task-category">Category</label>
+            <div class="icon-input has-chevron">
+              <i class="ri-folder-3-line icon-left"></i>
+              <select class="input" id="task-category">
+                <option value="general">General</option>
+                <option value="study">Study</option>
+                <option value="project">Project</option>
+                <option value="personal">Personal</option>
+              </select>
+              <i class="ri-arrow-down-s-line icon-right"></i>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">
+            <i class="ri-add-line"></i>
+            <span>Add Task</span>
+          </button>
+        </form>
+      </article>
+
+      <article class="card filter-card">
+        <div class="field field-grow">
+          <label for="task-search">Search</label>
+          <div class="icon-input">
+            <i class="ri-search-line icon-left"></i>
+            <input class="input" type="text" id="task-search" placeholder="Search tasks...">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="category-filter">Filter by Category</label>
+          <div class="icon-input has-chevron">
+            <i class="ri-filter-3-line icon-left"></i>
+            <select class="input" id="category-filter">
+              <option value="all">All Categories</option>
+              <option value="general">General</option>
+              <option value="study">Study</option>
+              <option value="project">Project</option>
+              <option value="personal">Personal</option>
+            </select>
+            <i class="ri-arrow-down-s-line icon-right"></i>
+          </div>
+        </div>
+      </article>
+
+      <div class="stats-grid">
+        <article class="stats-card">
+          <i class="ri-stack-line stats-icon"></i>
+          <p class="stats-label">Total Tasks</p>
+          <h3 class="stats-number" id="total-tasks">0</h3>
+        </article>
+
+        <article class="stats-card stats-card-success">
+          <i class="ri-checkbox-circle-line stats-icon"></i>
+          <p class="stats-label">Completed</p>
+          <h3 class="stats-number" id="completed-tasks">0</h3>
+        </article>
+
+        <article class="stats-card stats-card-warning">
+          <i class="ri-time-line stats-icon"></i>
+          <p class="stats-label">Pending</p>
+          <h3 class="stats-number" id="pending-tasks">0</h3>
+        </article>
+      </div>
+
+      <div class="clear-row">
+        <button class="btn btn-danger" type="button" id="clear-all">
+          <i class="ri-delete-bin-line"></i>
+          <span>Clear All Tasks</span>
+        </button>
+      </div>
+
+      <h2 class="section-title"><i class="ri-task-line"></i> Tasks</h2>
+      <div class="task-list" id="task-list">
+        <article class="card empty-state">
+          <i class="ri-inbox-line empty-icon"></i>
+          <p>No tasks available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="events">
+      <h2 class="section-title"><i class="ri-flow-chart"></i> Event Propagation Demo</h2>
+      <p class="section-subtitle">A click on the inner button travels outward through every ancestor layer below.</p>
+
+      <article class="card propagation-card">
+        <div class="prop-layer prop-grandparent">
+          <span class="prop-label"><i class="ri-shape-line"></i> Grandparent</span>
+
+          <div class="prop-layer prop-parent">
+            <span class="prop-label"><i class="ri-shape-2-line"></i> Parent</span>
+
+            <button class="prop-child" type="button">
+              <i class="ri-cursor-line"></i>
+              <span>Child Button</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container section" id="pipeline">
+      <h2 class="section-title"><i class="ri-cpu-line"></i> Browser Rendering Pipeline</h2>
+      <p class="section-subtitle">How raw markup and styles are turned into pixels on the screen.</p>
+
+      <div class="pipeline">
+        <div class="pipeline-columns">
+          <div class="pipeline-track">
+            <article class="card pipeline-node">
+              <i class="ri-html5-line"></i>
+              <h3>HTML</h3>
+            </article>
+            <i class="ri-arrow-down-line pipeline-arrow"></i>
+            <article class="card pipeline-node">
+              <i class="ri-code-s-slash-line"></i>
+              <h3>Parsing</h3>
+            </article>
+            <i class="ri-arrow-down-line pipeline-arrow"></i>
+            <article class="card pipeline-node">
+              <i class="ri-braces-line"></i>
+              <h3>Tokenization</h3>
+            </article>
+            <i class="ri-arrow-down-line pipeline-arrow"></i>
+            <article class="card pipeline-node pipeline-node-highlight">
+              <i class="ri-node-tree"></i>
+              <h3>DOM Tree</h3>
+            </article>
+          </div>
+
+          <div class="pipeline-track">
+            <article class="card pipeline-node">
+              <i class="ri-css3-line"></i>
+              <h3>CSS</h3>
+            </article>
+            <i class="ri-arrow-down-line pipeline-arrow"></i>
+            <article class="card pipeline-node pipeline-node-highlight">
+              <i class="ri-palette-line"></i>
+              <h3>CSSOM Tree</h3>
+            </article>
+          </div>
+        </div>
+
+        <i class="ri-arrow-down-line pipeline-arrow pipeline-merge-arrow"></i>
+
+        <article class="card pipeline-node pipeline-node-merge">
+          <i class="ri-merge-cells-horizontal"></i>
+          <h3>DOM Tree + CSSOM Tree</h3>
+        </article>
+
+        <i class="ri-arrow-down-line pipeline-arrow"></i>
+
+        <article class="card pipeline-node pipeline-node-final">
+          <i class="ri-stack-fill"></i>
+          <h3>Render Tree</h3>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+<script src="script.js"></script>
 </body>
 </html>
