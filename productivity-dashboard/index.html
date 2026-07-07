@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productivity Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <header class="topbar">
+    <div class="topbar-inner">
+
+      <div class="logo">
+        <!-- <i class="ri-dashboard-2-line"></i> -->
+        <span>Productivity</span>
+      </div>
+
+      <div class="datetime-widget">
+        <p id="current-date">Loading…</p>
+        <h3 id="current-time">00:00:00</h3>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <i class="ri-moon-line"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section id="dashboard">
+      <div class="container">
+
+        <div class="dash-intro">
+          <h1 id="greeting">Good Morning</h1>
+          <p>Choose a tool and get started with your day.</p>
+        </div>
+
+        <div class="feature-grid">
+
+          <article class="feature-card" data-feature="todo">
+            <div class="feature-card-icon fc-blue">
+              <i class="ri-check-double-line"></i>
+            </div>
+            <div class="feature-card-body">
+              <h2>Todo List</h2>
+              <p>Capture tasks, mark them important, and track what's done.</p>
+            </div>
+            <div class="feature-card-foot">
+              <span class="badge badge-soft" id="todo-badge">0 tasks</span>
+              <i class="ri-arrow-right-s-line fc-arrow"></i>
+            </div>
+          </article>
+
+          <article class="feature-card" data-feature="planner">
+            <div class="feature-card-icon fc-violet">
+              <i class="ri-calendar-schedule-line"></i>
+            </div>
+            <div class="feature-card-body">
+              <h2>Daily Planner</h2>
+              <p>Assign plans to specific time slots and own your schedule.</p>
+            </div>
+            <div class="feature-card-foot">
+              <span class="badge badge-soft">6 AM – 11 PM</span>
+              <i class="ri-arrow-right-s-line fc-arrow"></i>
+            </div>
+          </article>
+
+          <article class="feature-card" data-feature="motivation">
+            <div class="feature-card-icon fc-orange">
+              <i class="ri-double-quotes-l"></i>
+            </div>
+            <div class="feature-card-body">
+              <h2>Motivation</h2>
+              <p>Fetch a fresh inspiring quote whenever you need a boost.</p>
+            </div>
+            <div class="feature-card-foot">
+              <span class="badge badge-soft">Live API</span>
+              <i class="ri-arrow-right-s-line fc-arrow"></i>
+            </div>
+          </article>
+
+          <article class="feature-card" data-feature="pomodoro">
+            <div class="feature-card-icon fc-red">
+              <i class="ri-timer-2-line"></i>
+            </div>
+            <div class="feature-card-body">
+              <h2>Pomodoro Timer</h2>
+              <p>Work in 25-minute sprints. Focus deep, rest smart.</p>
+            </div>
+            <div class="feature-card-foot">
+              <span class="badge badge-soft">25 · 15 · 5 min</span>
+              <i class="ri-arrow-right-s-line fc-arrow"></i>
+            </div>
+          </article>
+
+          <article class="feature-card" data-feature="weather">
+            <div class="feature-card-icon fc-teal">  
+              <img width="60" height="60" src="https://img.icons8.com/3d-fluency/94/storm.png" alt="storm"/>
+              <i class="ri-partly-cloudy-line"></i>
+            </div>
+            <div class="feature-card-body">
+              <h2>Weather Widget</h2>
+              <p>Live temperature, conditions, humidity and wind for any city.</p>
+            </div>
+            <div class="feature-card-foot">
+              <span class="badge badge-soft">Live API</span>
+              <i class="ri-arrow-right-s-line fc-arrow"></i>
+            </div>
+          </article>
+
+          <article class="feature-card" data-feature="goals">
+            <div class="feature-card-icon fc-green">
+              <i class="ri-focus-3-line"></i>
+            </div>
+            <div class="feature-card-body">
+              <h2>Daily Goals</h2>
+              <p>Set your goals, check them off, and measure daily progress.</p>
+            </div>
+            <div class="feature-card-foot">
+              <span class="badge badge-soft" id="goals-badge">0 goals</span>
+              <i class="ri-arrow-right-s-line fc-arrow"></i>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="todo" class="feature-view hidden">
+      <div class="container">
+
+        <header class="feature-header">
+          <button class="btn btn-ghost back-btn" type="button">
+            <i class="ri-arrow-left-line"></i>
+            <span>Dashboard</span>
+          </button>
+          <div class="feature-title">
+            <span class="title-icon fc-blue"><i class="ri-check-double-line"></i></span>
+            <h2>Todo List</h2>
+          </div>
+        </header>
+
+        <article class="card">
+          <form class="add-row-form" id="todo-form">
+            <div class="field field-grow">
+              <label for="todo-input">New Task</label>
+              <input class="input" type="text" id="todo-input" placeholder="What do you need to do?">
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <i class="ri-add-line"></i>
+              <span>Add Task</span>
+            </button>
+          </form>
+        </article>
+
+        <div class="filter-tabs" role="tablist">
+          <button class="filter-tab active" data-filter="all" type="button">All</button>
+          <button class="filter-tab" data-filter="active" type="button">Active</button>
+          <button class="filter-tab" data-filter="completed" type="button">Completed</button>
+          <button class="filter-tab" data-filter="important" type="button">
+            <i class="ri-star-line"></i> Important
+          </button>
+        </div>
+
+        <ul class="task-list" id="todo-list">
+          <li class="empty-state">
+            <i class="ri-inbox-line"></i>
+            <p>No tasks yet. Add one above!</p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section id="planner" class="feature-view hidden">
+      <div class="container">
+
+        <header class="feature-header">
+          <button class="btn btn-ghost back-btn" type="button">
+            <i class="ri-arrow-left-line"></i>
+            <span>Dashboard</span>
+          </button>
+          <div class="feature-title">
+            <span class="title-icon fc-violet"><i class="ri-calendar-schedule-line"></i></span>
+            <h2>Daily Planner</h2>
+          </div>
+        </header>
+
+        <div class="planner-grid" id="planner-grid">
+
+          <!-- 6 AM → 11 PM time slots -->
+
+          <div class="planner-slot" data-hour="6">
+            <label class="planner-time" for="slot-6">6 <span>AM</span></label>
+            <input class="input planner-input" type="text" id="slot-6" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="7">
+            <label class="planner-time" for="slot-7">7 <span>AM</span></label>
+            <input class="input planner-input" type="text" id="slot-7" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="8">
+            <label class="planner-time" for="slot-8">8 <span>AM</span></label>
+            <input class="input planner-input" type="text" id="slot-8" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="9">
+            <label class="planner-time" for="slot-9">9 <span>AM</span></label>
+            <input class="input planner-input" type="text" id="slot-9" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="10">
+            <label class="planner-time" for="slot-10">10 <span>AM</span></label>
+            <input class="input planner-input" type="text" id="slot-10" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="11">
+            <label class="planner-time" for="slot-11">11 <span>AM</span></label>
+            <input class="input planner-input" type="text" id="slot-11" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot planner-midday" data-hour="12">
+            <label class="planner-time" for="slot-12">12 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-12" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="13">
+            <label class="planner-time" for="slot-13">1 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-13" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="14">
+            <label class="planner-time" for="slot-14">2 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-14" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="15">
+            <label class="planner-time" for="slot-15">3 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-15" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="16">
+            <label class="planner-time" for="slot-16">4 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-16" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="17">
+            <label class="planner-time" for="slot-17">5 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-17" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="18">
+            <label class="planner-time" for="slot-18">6 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-18" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="19">
+            <label class="planner-time" for="slot-19">7 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-19" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="20">
+            <label class="planner-time" for="slot-20">8 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-20" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="21">
+            <label class="planner-time" for="slot-21">9 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-21" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="22">
+            <label class="planner-time" for="slot-22">10 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-22" placeholder="No plan yet…">
+          </div>
+
+          <div class="planner-slot" data-hour="23">
+            <label class="planner-time" for="slot-23">11 <span>PM</span></label>
+            <input class="input planner-input" type="text" id="slot-23" placeholder="No plan yet…">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="motivation" class="feature-view hidden">
+      <div class="container">
+
+        <header class="feature-header">
+          <button class="btn btn-ghost back-btn" type="button">
+            <i class="ri-arrow-left-line"></i>
+            <span>Dashboard</span>
+          </button>
+          <div class="feature-title">
+            <span class="title-icon fc-orange"><i class="ri-double-quotes-l"></i></span>
+            <h2>Motivation</h2>
+          </div>
+        </header>
+
+        <article class="card quote-card">
+          <i class="ri-double-quotes-l quote-watermark" aria-hidden="true"></i>
+          <blockquote id="quote-text">
+            <p>Hit the button below to load your first quote.</p>
+          </blockquote>
+          <p class="quote-author" id="quote-author"></p>
+          <button class="btn btn-primary" id="new-quote-btn" type="button">
+            <i class="ri-refresh-line"></i>
+            <span>New Quote</span>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="pomodoro" class="feature-view hidden">
+      <div class="container">
+
+        <header class="feature-header">
+          <button class="btn btn-ghost back-btn" type="button">
+            <i class="ri-arrow-left-line"></i>
+            <span>Dashboard</span>
+          </button>
+          <div class="feature-title">
+            <span class="title-icon fc-red"><i class="ri-timer-2-line"></i></span>
+            <h2>Pomodoro Timer</h2>
+          </div>
+        </header>
+
+        <div class="timer-modes">
+          <button class="mode-btn active" data-minutes="25" type="button">Work · 25 min</button>
+          <button class="mode-btn" data-minutes="15" type="button">Long Break · 15 min</button>
+          <button class="mode-btn" data-minutes="5" type="button">Short Break · 5 min</button>
+        </div>
+
+        <article class="card timer-card">
+          <p class="timer-session-label" id="session-label">
+            <i class="ri-focus-2-line"></i> Work Session
+          </p>
+          <h1 class="timer-display" id="timer-display">25:00</h1>
+          <div class="timer-ring" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <circle class="ring-track" cx="60" cy="60" r="54" />
+              <circle class="ring-fill" id="timer-ring-fill" cx="60" cy="60" r="54" />
+            </svg>
+          </div>
+          <div class="timer-controls">
+            <button class="btn btn-primary" id="start-btn" type="button">
+              <i class="ri-play-fill"></i>
+              <span>Start</span>
+            </button>
+            <button class="btn btn-secondary" id="pause-btn" type="button" disabled>
+              <i class="ri-pause-fill"></i>
+              <span>Pause</span>
+            </button>
+            <button class="btn btn-ghost" id="reset-btn" type="button">
+              <i class="ri-restart-line"></i>
+              <span>Reset</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="weather" class="feature-view hidden">
+      <div class="container">
+
+        <header class="feature-header">
+          <button class="btn btn-ghost back-btn" type="button">
+            <i class="ri-arrow-left-line"></i>
+            <span>Dashboard</span>
+          </button>
+          <div class="feature-title">
+            <span class="title-icon fc-teal">
+              <i class="ri-partly-cloudy-line"></i>
+              <!-- <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/storm.png" alt="storm"/> -->
+            </span>
+            <h2>Weather Widget</h2>
+          </div>
+        </header>
+
+        <article class="card">
+          <form class="add-row-form" id="weather-form">
+            <div class="field field-grow">
+              <label for="city-input">City</label>
+              <div class="icon-input">
+                <i class="ri-map-pin-line icon-left"></i>
+                <input class="input" type="text" id="city-input" placeholder="Enter city name…">
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <i class="ri-search-line"></i>
+              <span>Search</span>
+            </button>
+            <button class="btn btn-ghost" type="button" id="geo-btn">
+              <i class="ri-crosshair-2-line"></i>
+              <span>My Location</span>
+            </button>
+          </form>
+        </article>
+
+        <div id="weather-display">
+          <article class="card weather-placeholder">
+            <i class="ri-partly-cloudy-line"></i>
+            <p>Search for a city or use your location to see the weather.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="goals" class="feature-view hidden">
+      <div class="container">
+
+        <header class="feature-header">
+          <button class="btn btn-ghost back-btn" type="button">
+            <i class="ri-arrow-left-line"></i>
+            <span>Dashboard</span>
+          </button>
+          <div class="feature-title">
+            <span class="title-icon fc-green"><i class="ri-focus-3-line"></i></span>
+            <h2>Daily Goals</h2>
+          </div>
+        </header>
+
+        <article class="card progress-card">
+          <div class="progress-header">
+            <h3>Today's Progress</h3>
+            <p class="progress-count" id="goals-progress">0 of 0 completed</p>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="goals-bar" style="width: 0%"></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <form class="add-row-form" id="goals-form">
+            <div class="field field-grow">
+              <label for="goal-input">New Goal</label>
+              <input class="input" type="text" id="goal-input" placeholder="What do you want to achieve today?">
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <i class="ri-add-line"></i>
+              <span>Add Goal</span>
+            </button>
+          </form>
+        </article>
+
+        <ul class="task-list" id="goals-list">
+          <li class="empty-state">
+            <i class="ri-focus-3-line"></i>
+            <p>No goals set. Add one above to get started!</p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
