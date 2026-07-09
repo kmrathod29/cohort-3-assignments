@@ -93,28 +93,51 @@ themeBtn.addEventListener("click", function () {
 // flag so we only auto-fetch a quote on the first open
 let motivationLoaded = false;
 
+const activeViewKey = "pd-active-view";
+const dashboardSection = document.getElementById("dashboard");
+const featureViews = document.querySelectorAll(".feature-view");
 const featureGrid = document.querySelector(".feature-grid");
+
+function setActiveView(viewName, persist = true) {
+  const normalizedView = viewName || "dashboard";
+  const targetView = document.getElementById(normalizedView);
+
+  if (!targetView) return;
+
+  dashboardSection.classList.toggle("hidden", normalizedView !== "dashboard");
+  featureViews.forEach(function (view) {
+    view.classList.toggle("hidden", view.id !== normalizedView);
+  });
+
+  if (persist) {
+    localStorage.setItem(activeViewKey, normalizedView);
+  }
+
+  if (normalizedView === "planner") {
+    highlightCurrentSlot();
+  }
+
+  if (normalizedView === "motivation" && !motivationLoaded) {
+    motivationLoaded = true;
+    fetchQuote();
+  }
+}
+
+function restoreActiveView() {
+  const savedView = localStorage.getItem(activeViewKey);
+  if (savedView && document.getElementById(savedView)) {
+    setActiveView(savedView, true);
+  } else {
+    setActiveView("dashboard", false);
+  }
+}
 
 // event delegation — one listener for all 6 feature cards
 featureGrid.addEventListener("click", function (e) {
   const card = e.target.closest(".feature-card");
   if (!card) return;
 
-  const name = card.dataset.feature;
-
-  // hide the dashboard, reveal the chosen feature
-  document.getElementById("dashboard").classList.add("hidden");
-  document.getElementById(name).classList.remove("hidden");
-
-  // per-feature side effects on open
-  if (name === "planner") {
-    highlightCurrentSlot();  // function is declared below — hoisting handles this
-  }
-
-  if (name === "motivation" && !motivationLoaded) {
-    motivationLoaded = true;
-    fetchQuote();            // async function declared below — also hoisted
-  }
+  setActiveView(card.dataset.feature);
 });
 
 // every back button hides the current feature and returns to the dashboard
@@ -122,12 +145,11 @@ const backButtons = document.querySelectorAll(".back-btn");
 
 backButtons.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    document.querySelectorAll(".feature-view").forEach(function (view) {
-      view.classList.add("hidden");
-    });
-    document.getElementById("dashboard").classList.remove("hidden");
+    setActiveView("dashboard");
   });
 });
+
+restoreActiveView();
 
 
 // ================================================================
